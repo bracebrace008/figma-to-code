@@ -33,7 +33,7 @@ const toHexComponent = (value: number): string => {
 };
 
 export const paintToCSS = (paint: Paint): string | null => {
-  if (!paint.visible) return null; // Skip if the paint is not visible
+  if (paint.visible == false) return null; // Skip if the paint is not visible
 
   switch (paint.type) {
     case "SOLID":

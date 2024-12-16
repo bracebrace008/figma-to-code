@@ -1,10 +1,6 @@
-import { colorToRgba } from "./utils/colorUtil";
+import { paintToCSS } from "./utils/colorUtil";
+import testJson from "./test.json";
 
-console.log(
-  colorToRgba({
-    r: 0.9333333373069763,
-    g: 0.9333333373069763,
-    b: 0.9333333373069763,
-    a: 1,
-  })
-);
+console.log((testJson as any).fills[0].type);
+
+console.log(paintToCSS((testJson as any).fills[0]));
