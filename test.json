@@ -1,0 +1,59 @@
+{
+  "id": "12:9",
+  "name": "Navbar",
+  "type": "FRAME",
+  "scrollBehavior": "STICKY_SCROLLS",
+  "blendMode": "PASS_THROUGH",
+  "clipsContent": false,
+  "background": [
+    {
+      "blendMode": "NORMAL",
+      "type": "SOLID",
+      "color": {
+        "r": 0.9333333373069763,
+        "g": 0.9333333373069763,
+        "b": 0.9333333373069763,
+        "a": 1
+      }
+    }
+  ],
+  "fills": [
+    {
+      "blendMode": "NORMAL",
+      "type": "SOLID",
+      "color": {
+        "r": 0.9333333373069763,
+        "g": 0.9333333373069763,
+        "b": 0.9333333373069763,
+        "a": 1
+      }
+    }
+  ],
+  "strokes": [],
+  "strokeWeight": 1,
+  "strokeAlign": "INSIDE",
+  "backgroundColor": {
+    "r": 0.9333333373069763,
+    "g": 0.9333333373069763,
+    "b": 0.9333333373069763,
+    "a": 1
+  },
+  "layoutMode": "HORIZONTAL",
+  "counterAxisSizingMode": "FIXED",
+  "itemSpacing": 14,
+  "primaryAxisSizingMode": "FIXED",
+  "counterAxisAlignItems": "CENTER",
+  "primaryAxisAlignItems": "SPACE_BETWEEN",
+  "paddingLeft": 20,
+  "paddingRight": 20,
+  "paddingTop": 20,
+  "paddingBottom": 20,
+  "layoutWrap": "NO_WRAP",
+  "absoluteBoundingBox": { "x": -160, "y": -284, "width": 320, "height": 52 },
+  "absoluteRenderBounds": { "x": -160, "y": -284, "width": 320, "height": 52 },
+  "constraints": { "vertical": "TOP", "horizontal": "LEFT" },
+  "layoutSizingHorizontal": "FIXED",
+  "layoutSizingVertical": "FIXED",
+  "effects": [],
+  "interactions": []
+}
