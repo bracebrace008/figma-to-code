@@ -1,3 +1,4 @@
+import { getTailwindAutoLayout } from "./tailwindAutoLayout";
 import { getTailwindBg, getTailwindColor } from "./tailwindColor";
 import { getTailwindPadding } from "./tailwindPadding";
 import { getTailwindSize } from "./tailwindSize";
@@ -7,8 +8,9 @@ function tailwindFrame(node: FrameNode) {
         getTailwindColor(node),
         getTailwindBg(node),
         getTailwindSize(node),
-        getTailwindPadding(node)
-    ].join(' ');
+        getTailwindPadding(node),
+        getTailwindAutoLayout(node)
+    ].join(' ').trim();
     return `<div class="${tailwindClass}"></div>`;
 }
 
