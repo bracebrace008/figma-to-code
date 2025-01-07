@@ -2,8 +2,11 @@ import { paintToCSS } from "./utils/colorUtil";
 import testJson from "./test.json";
 import { getTailwindAutoLayout } from "./tailwind/tailwindAutoLayout";
 import { getTailwindPadding } from "./tailwind/tailwindPadding";
-import { tailwindGenerator } from "./tailwind/tailwindMain";
+import { tailwindMain } from "./tailwind/tailwindMain";
 
-console.log((testJson as any).fills[0].type);
+async function main() {
+  const content = await tailwindMain(testJson as any);
+  console.log(content);
+}
 
-console.log(tailwindGenerator((testJson as any)));
+main();

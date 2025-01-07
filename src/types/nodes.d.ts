@@ -15,7 +15,7 @@ interface BaseNode {
 }
 
 interface FrameNode extends BaseNode {
-  children?: Node[]; // An array of nodes that are direct children of this node
+  children?: BaseNode[]; // An array of nodes that are direct children of this node
   locked?: boolean; // If true, layer is locked and cannot be edited. Default is false.
   backgroundPaint?: Paint[]; // [DEPRECATED] Background of the node.
   backgroundColor?: Color; // [DEPRECATED] Background color of the node.

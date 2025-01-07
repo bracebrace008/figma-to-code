@@ -7,7 +7,8 @@ export const colorToHex = (color: Color): string => {
   const r = Math.round(color.r * 255);
   const g = Math.round(color.g * 255);
   const b = Math.round(color.b * 255);
-  return `#${toHexComponent(r)}${toHexComponent(g)}${toHexComponent(b)}`;
+  const a = color.a !== undefined ? Math.round(color.a * 255) : 255;
+  return `#${toHexComponent(r)}${toHexComponent(g)}${toHexComponent(b)}${a == 255 ? "" : toHexComponent(a)}`;
 };
 
 /**
@@ -32,12 +33,13 @@ const toHexComponent = (value: number): string => {
   return value.toString(16).padStart(2, "0");
 };
 
-export const paintToCSS = (paint: Paint): string | null => {
+export const paintToCSS = (paint: Paint, isRgba?: boolean): string | null => {
   if (paint.visible == false) return null; // Skip if the paint is not visible
 
   switch (paint.type) {
     case "SOLID":
-      return solidPaintToCSS(paint);
+      if (!paint.color) throw new Error("Solid paint must have a color.");
+      return isRgba ? colorToRgba(paint.color) : colorToHex(paint.color);
     case "GRADIENT_LINEAR":
       return linearGradientToCSS(paint);
     case "GRADIENT_RADIAL":
@@ -48,12 +50,6 @@ export const paintToCSS = (paint: Paint): string | null => {
       console.warn(`Unsupported paint type: ${paint.type}`);
       return null;
   }
-};
-
-// Convert SOLID paint to CSS
-export const solidPaintToCSS = (paint: Paint): string => {
-  if (!paint.color) throw new Error("Solid paint must have a color.");
-  return colorToRgba(paint.color);
 };
 
 // Convert linear gradient paint to CSS
