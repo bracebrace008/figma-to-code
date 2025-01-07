@@ -2,6 +2,7 @@ import { getTailwindAutoLayout } from "./tailwindAutoLayout";
 import { getTailwindBg, getTailwindColor } from "./tailwindColor";
 import { getTailwindPadding } from "./tailwindPadding";
 import { getTailwindSize } from "./tailwindSize";
+import { tailwindTextBuilder } from "./tailwindText";
 
 function tailwindFrame(node: FrameNode) {
     const tailwindClass = [
@@ -14,21 +15,17 @@ function tailwindFrame(node: FrameNode) {
     return `<div class="${tailwindClass}"></div>`;
 }
 
-function tailwindText(node: FrameNode) {
-    return `<div class=""></div>`;
-}
-
-export function tailwindGenerator(node: FrameNode) {
+export function tailwindGenerator(node: FrameNode | TextNode): string {
     let content = '';
     switch (node.type) {
         case "FRAME":
         case "COMPONENT":
         case "INSTANCE":
         case "COMPONENT_SET":
-            content = tailwindFrame(node);
+            content += tailwindFrame(node);
             break;
         case "TEXT":
-            content = tailwindText(node);
+            content += tailwindTextBuilder(node as TextNode);
             break;
     }
     return content;
