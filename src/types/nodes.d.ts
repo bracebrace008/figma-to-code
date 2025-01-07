@@ -124,14 +124,6 @@ interface TextNode extends VectorNode {
   lineIndentations: number[]; // Array of indentation levels for each line
 }
 
-type Interaction = any; // Define based on interaction structure
-type EasingType = any; // Define based on easing type structure
-type Rectangle = any; // Define based on rectangle structure
-type LayoutGrid = any; // Define based on layout grid structure
-type Effect = any; // Define based on effect structure
-type StyleType = any; // Define based on style type structure
-type Annotation = any; // Define based on annotation structure
-
 interface TypeStyle {
   fontFamily?: string;
   fontPostScriptName?: string;
@@ -160,3 +152,11 @@ interface TypeStyle {
   semanticWeight?: "BOLD" | "NORMAL";
   semanticItalic?: "ITALIC" | "NORMAL";
 }
+
+type Interaction = any; // Define based on interaction structure
+type EasingType = any; // Define based on easing type structure
+type Rectangle = any; // Define based on rectangle structure
+type LayoutGrid = any; // Define based on layout grid structure
+type Effect = any; // Define based on effect structure
+type StyleType = any; // Define based on style type structure
+type Annotation = any; // Define based on annotation structure
