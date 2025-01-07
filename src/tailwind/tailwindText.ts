@@ -1,4 +1,6 @@
-function tailwindTextBuilder(textNode: TextNode): string {
+import { paintToCSS } from "../utils/colorUtil";
+
+export function tailwindTextBuilder(textNode: TextNode): string {
     const style = textNode.style;
     const tailwindClasses: string[] = [];
 
@@ -9,7 +11,7 @@ function tailwindTextBuilder(textNode: TextNode): string {
         tailwindClasses.push(`font-${style.fontWeight}`);
     }
     if (style.fontSize) {
-        tailwindClasses.push(`text-${style.fontSize}px`);
+        tailwindClasses.push(`text-[${style.fontSize}px]`);
     }
     if (style.textAlignHorizontal) {
         tailwindClasses.push(`text-${style.textAlignHorizontal.toLowerCase()}`);
@@ -30,11 +32,18 @@ function tailwindTextBuilder(textNode: TextNode): string {
         tailwindClasses.push(style.textDecoration.toLowerCase());
     }
     if (style.letterSpacing) {
-        tailwindClasses.push(`tracking-${style.letterSpacing}px`);
+        tailwindClasses.push(`tracking-[${style.letterSpacing}px]`);
     }
     if (style.lineHeightPx) {
-        tailwindClasses.push(`leading-${style.lineHeightPx}px`);
+        tailwindClasses.push(`leading-[${style.lineHeightPx}px]`);
     }
 
-    return tailwindClasses.join(' ');
+    if (textNode.fills.length > 0) {
+        const fill = textNode.fills[0];
+        if (fill.type === 'SOLID') {
+            tailwindClasses.push(`text-${paintToCSS(fill)}`);
+        }
+    }
+
+    return `<div class="${tailwindClasses.join(' ')}">${textNode.characters}</div>`;
 }
