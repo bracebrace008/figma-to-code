@@ -43,8 +43,8 @@ function getGap(node: FrameNode) {
 }
 
 export function getTailwindAutoLayout(node: FrameNode) {
-  if (node.layoutMode === "NONE") {
-    return "flex-none";
+  if (!node.layoutMode) {
+    return "";
   }
   return Object.values({
     flex: "flex",
