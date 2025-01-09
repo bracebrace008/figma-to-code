@@ -22,7 +22,7 @@ export async function fetchFigmaFile() {
     fs.writeFileSync("figma_content.json", JSON.stringify(figmaContent, null, 2));
     
     const tailwindContent = await tailwindMain(figmaContent);
-    fs.writeFileSync("tailwind.json", JSON.stringify(tailwindContent, null, 2));
+    fs.writeFileSync("tailwind.html", tailwindContent);
     
     console.log("Figma content and Tailwind content have been saved.");
   } catch (error) {
