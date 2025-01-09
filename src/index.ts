@@ -1,3 +1,1 @@
-import { fetchFigmaFile } from "./fetchFigma";
-
-fetchFigmaFile();
+export { figmaToTailwind } from "./tailwind/tailwindMain";

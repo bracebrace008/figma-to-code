@@ -5,7 +5,7 @@ import { getTailwindSize } from "./tailwindSize";
 import { tailwindTextBuilder } from "./tailwindText";
 import prettier from "prettier";
 
-export async function tailwindMain(node: FrameNode) {
+export async function figmaToTailwind(node: FrameNode) {
     const code = tailwindGenerator(node);
     const formattedCode = await prettier.format(code, {
         parser: "html",

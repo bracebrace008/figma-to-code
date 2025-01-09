@@ -11,12 +11,11 @@
     "typeRoots": [
       "./types",
       "./node_modules/@types",
-      "../node_modules/@types",
-      "../node_modules/@figma"
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "test/fetchFigma.js"
   ],
   "exclude": [
     "node_modules"
